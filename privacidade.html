@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Política de Privacidade HMfit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Layout: single-column legal document, sticky condensed section-jump bar,
+     numbered sections (citable), callout cards for the subprocessor and
+     rights tables. Treatment is utilitarian — a legal doc, not a landing page. */
+  :root {
+    --bg: #F6FAFE;
+    --surface: #FFFFFF;
+    --surface-sunken: #EEF5FC;
+    --text: #0A1F3D;
+    --text-dim: #4D6076;
+    --text-faint: #7C8DA0;
+    --border: #DCE7F2;
+    --navy: #001F54;
+    --blue: #0A6CF1;
+    --cyan: #0A86B3;
+    --gold: #9C6A00;
+    --gold-soft: #FFF3D6;
+    --cyan-soft: #E3F6FF;
+    --radius: 14px;
+    --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    --font-body: 'Manrope', -apple-system, 'Segoe UI', sans-serif;
+    color-scheme: light;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #001024;
+      --surface: #04234F;
+      --surface-sunken: #021636;
+      --text: #DFF6FF;
+      --text-dim: #9FC2DE;
+      --text-faint: #6E90AC;
+      --border: #123A73;
+      --navy: #DFF6FF;
+      --blue: #4FA0FF;
+      --cyan: #16C3FF;
+      --gold: #FFB703;
+      --gold-soft: #2B2409;
+      --cyan-soft: #06283F;
+      color-scheme: dark;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #001024;
+    --surface: #04234F;
+    --surface-sunken: #021636;
+    --text: #DFF6FF;
+    --text-dim: #9FC2DE;
+    --text-faint: #6E90AC;
+    --border: #123A73;
+    --navy: #DFF6FF;
+    --blue: #4FA0FF;
+    --cyan: #16C3FF;
+    --gold: #FFB703;
+    --gold-soft: #2B2409;
+    --cyan-soft: #06283F;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  a { color: var(--blue); text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--blue) 40%, transparent); }
+  a:hover { text-decoration-color: var(--blue); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; border-radius: 4px; }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-wrap: balance;
+    letter-spacing: 0.01em;
+  }
+
+  .wrap { max-width: 760px; margin: 0 auto; padding-inline: 20px; }
+
+  header.masthead {
+    padding-block: 40px 28px;
+    border-bottom: 1px solid var(--border);
+  }
+  .wordmark {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 2px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 18px;
+  }
+  .wordmark b { color: var(--navy); }
+  h1.title {
+    font-size: clamp(28px, 6vw, 40px);
+    line-height: 1.08;
+    margin: 0 0 10px;
+    color: var(--navy);
+  }
+  .subtitle { color: var(--text-dim); font-size: 15px; margin: 0 0 18px; max-width: 46ch; }
+  .meta-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12.5px; font-weight: 600; letter-spacing: 0.02em;
+    padding: 6px 12px; border-radius: 999px;
+    background: var(--surface-sunken); color: var(--text-dim);
+    border: 1px solid var(--border);
+    font-variant-numeric: tabular-nums;
+  }
+  .badge.accent { background: var(--cyan-soft); color: var(--cyan); border-color: transparent; }
+
+  nav.jump {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 5;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav.jump .scroller {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding: 10px 20px;
+    max-width: 760px;
+    margin: 0 auto;
+    scrollbar-width: none;
+  }
+  nav.jump .scroller::-webkit-scrollbar { display: none; }
+  nav.jump a {
+    flex: none;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: var(--text-dim);
+    padding: 7px 13px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  nav.jump a:hover { background: var(--surface-sunken); color: var(--text); }
+
+  main { padding-block: 36px 60px; }
+
+  section.clause { padding-block: 26px; border-bottom: 1px solid var(--border); scroll-margin-top: 64px; }
+  section.clause:last-of-type { border-bottom: none; }
+
+  .clause-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px; }
+  .clause-num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--blue);
+    font-variant-numeric: tabular-nums;
+    flex: none;
+    min-width: 1.6em;
+  }
+  h2.clause-title { font-size: 21px; margin: 0; color: var(--navy); }
+
+  section.clause p, section.clause li { color: var(--text-dim); font-size: 15.5px; }
+  section.clause p { margin: 0 0 14px; }
+  section.clause ul, section.clause ol { margin: 0 0 14px; padding-left: 22px; }
+  section.clause li { margin-bottom: 7px; }
+  section.clause li::marker { color: var(--blue); }
+  strong { color: var(--text); font-weight: 700; }
+
+  .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); margin: 4px 0 18px; }
+  table { width: 100%; border-collapse: collapse; min-width: 480px; font-size: 14px; }
+  thead th {
+    text-align: left; font-family: var(--font-display); font-weight: 600;
+    font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--text-faint); background: var(--surface-sunken);
+    padding: 10px 14px; border-bottom: 1px solid var(--border);
+  }
+  tbody td { padding: 12px 14px; border-bottom: 1px solid var(--border); color: var(--text-dim); vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody td:first-child { color: var(--text); font-weight: 600; white-space: nowrap; }
+
+  .rights-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 4px 0 18px; }
+  @media (max-width: 520px) { .rights-grid { grid-template-columns: 1fr; } }
+  .right-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 14px 16px;
+  }
+  .right-card .label { font-family: var(--font-display); font-weight: 600; font-size: 14.5px; color: var(--navy); display: block; margin-bottom: 3px; }
+  .right-card .desc { font-size: 13.5px; color: var(--text-dim); }
+
+  .how-to {
+    background: var(--cyan-soft);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    margin: 4px 0 18px;
+    font-size: 14.5px;
+    color: var(--text);
+  }
+  .how-to .eyebrow { display: block; font-family: var(--font-display); font-weight: 700; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cyan); margin-bottom: 6px; }
+  .how-to code { background: color-mix(in srgb, var(--cyan-soft) 40%, var(--surface)); padding: 2px 6px; border-radius: 6px; font-family: var(--font-body); font-weight: 600; font-size: 13.5px; }
+
+  .contact-card {
+    background: var(--navy);
+    color: var(--bg);
+    border-radius: 18px;
+    padding: 26px 24px;
+    margin-top: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .contact-card .ct-label { font-family: var(--font-display); font-weight: 600; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.7; margin-bottom: 4px; }
+  .contact-card .ct-email { font-size: 19px; font-weight: 700; color: #fff; text-decoration: none; }
+  .contact-card .ct-email:hover { text-decoration: underline; }
+  .contact-card .ct-sub { font-size: 13.5px; opacity: 0.75; max-width: 32ch; }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding-block: 22px 40px;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    font-size: 13px; color: var(--text-faint);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    section.clause { animation: rise 0.5s ease-out backwards; }
+    section.clause:nth-of-type(1) { animation-delay: 0.02s; }
+  }
+  @keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="wordmark">HM<b>fit</b></div>
+    <h1 class="title">Política de Privacidade</h1>
+    <p class="subtitle">Como o HMfit coleta, usa e protege os seus dados pessoais no app e nos serviços relacionados à sua assinatura.</p>
+    <div class="meta-row">
+      <span class="badge accent">Vigente desde 11 de outubro de 2026</span>
+      <span class="badge">Conforme a LGPD (Lei 13.709/2018)</span>
+    </div>
+  </div>
+</header>
+
+<nav class="jump" aria-label="Seções da política">
+  <div class="scroller">
+    <a href="#dados">1. Dados coletados</a>
+    <a href="#uso">2. Como usamos</a>
+    <a href="#compartilhamento">3. Compartilhamento</a>
+    <a href="#base-legal">4. Base legal</a>
+    <a href="#retencao">5. Retenção</a>
+    <a href="#direitos">6. Seus direitos</a>
+    <a href="#seguranca">7. Segurança</a>
+    <a href="#criancas">8. Menores de idade</a>
+    <a href="#cookies">9. Cookies</a>
+    <a href="#alteracoes">10. Alterações</a>
+    <a href="#contato">11. Contato</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section class="clause">
+    <p style="font-size:15.5px; color:var(--text-dim); margin-top:0;">
+      O HMfit é um aplicativo de treinos personalizados com planos gerados e ajustados por inteligência artificial.
+      Esta política explica, de forma direta, quais dados tratamos para oferecer esse serviço e quais direitos você tem sobre eles.
+      Ao criar uma conta no HMfit, você concorda com os termos descritos aqui.
+    </p>
+  </section>
+
+  <section class="clause" id="dados">
+    <div class="clause-head"><span class="clause-num">1.</span><h2 class="clause-title">Dados que coletamos</h2></div>
+    <p>Coletamos apenas os dados necessários para montar e ajustar seus treinos, e para administrar sua conta e assinatura:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Categoria</th><th>Exemplos</th><th>Para quê</th></tr></thead>
+        <tbody>
+          <tr><td>Cadastro</td><td>Nome, e-mail, senha (criptografada)</td><td>Criar e autenticar sua conta</td></tr>
+          <tr><td>Perfil físico</td><td>Idade, sexo biológico, altura, peso, nível de experiência, objetivo</td><td>Calcular volume de treino e selecionar exercícios adequados</td></tr>
+          <tr><td>Saúde e limitações</td><td>Lesões, dores ou contraindicações informadas por você na anamnese</td><td>Evitar exercícios contraindicados e adaptar a progressão</td></tr>
+          <tr><td>Uso do app</td><td>Treinos realizados, cargas, séries, pedidos de ajuste de treino</td><td>Acompanhar sua evolução e gerar novos ajustes com IA</td></tr>
+          <tr><td>Dispositivo</td><td>Token de notificação push, plataforma (iOS/Android)</td><td>Enviar lembretes de treino e avisos de assinatura</td></tr>
+          <tr><td>Assinatura</td><td>Plano, ciclo de cobrança, status (ativo, teste, cancelado)</td><td>Liberar os recursos do seu plano</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-bottom:0;">
+      <strong>Nunca temos acesso aos dados do seu cartão ou meio de pagamento.</strong> As assinaturas são processadas
+      diretamente pela App Store ou Google Play; recebemos apenas a confirmação de que o pagamento foi aprovado.
+    </p>
+  </section>
+
+  <section class="clause" id="uso">
+    <div class="clause-head"><span class="clause-num">2.</span><h2 class="clause-title">Como usamos seus dados</h2></div>
+    <ul>
+      <li>Gerar, pela Claude (Anthropic), um plano de treino personalizado com base no seu perfil, objetivo e limitações.</li>
+      <li>Ajustar automaticamente a progressão de carga e substituir exercícios contraindicados.</li>
+      <li>Mostrar seu histórico e evolução dentro do app.</li>
+      <li>Enviar notificações sobre seus treinos e sobre o status da sua assinatura.</li>
+      <li>Oferecer suporte quando você entra em contato com a gente.</li>
+      <li>Cumprir obrigações legais e fiscais ligadas à sua assinatura.</li>
+    </ul>
+    <p style="margin-bottom:0;">Não usamos seus dados para fins de publicidade, e o HMfit não exibe anúncios de terceiros.</p>
+  </section>
+
+  <section class="clause" id="compartilhamento">
+    <div class="clause-head"><span class="clause-num">3.</span><h2 class="clause-title">Com quem compartilhamos</h2></div>
+    <p>Compartilhamos dados apenas com prestadores de serviço que operam a infraestrutura do app, cada um com acesso limitado ao que precisa para a sua função:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Serviço</th><th>Função</th></tr></thead>
+        <tbody>
+          <tr><td>Supabase</td><td>Banco de dados, autenticação e processamento em servidor</td></tr>
+          <tr><td>Anthropic (Claude)</td><td>Geração e ajuste dos treinos personalizados por IA</td></tr>
+          <tr><td>RevenueCat</td><td>Gestão das assinaturas compradas pela App Store / Google Play</td></tr>
+          <tr><td>Apple App Store / Google Play</td><td>Processamento do pagamento da assinatura</td></tr>
+          <tr><td>Cloudflare Stream</td><td>Hospedagem dos vídeos demonstrativos de exercícios</td></tr>
+          <tr><td>Resend</td><td>Envio de e-mails transacionais (ex.: confirmação, exportação de dados)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-bottom:0;">Não vendemos seus dados pessoais e não os compartilhamos com terceiros para fins de marketing.</p>
+  </section>
+
+  <section class="clause" id="base-legal">
+    <div class="clause-head"><span class="clause-num">4.</span><h2 class="clause-title">Base legal (LGPD)</h2></div>
+    <p>Tratamos seus dados com base em:</p>
+    <ul>
+      <li><strong>Execução de contrato</strong> — para fornecer o serviço de treinos que você assinou.</li>
+      <li><strong>Consentimento</strong> — para dados sensíveis de saúde (lesões e limitações), coletado explicitamente na anamnese.</li>
+      <li><strong>Cumprimento de obrigação legal</strong> — para registros fiscais e contábeis da sua assinatura.</li>
+      <li><strong>Legítimo interesse</strong> — para segurança, prevenção a fraude e melhoria do serviço.</li>
+    </ul>
+  </section>
+
+  <section class="clause" id="retencao">
+    <div class="clause-head"><span class="clause-num">5.</span><h2 class="clause-title">Por quanto tempo guardamos</h2></div>
+    <p style="margin-bottom:0;">
+      Mantemos seus dados enquanto sua conta estiver ativa. Se você excluir sua conta, seus dados pessoais e
+      histórico de treino são removidos permanentemente, exceto informações que a lei exige manter por mais tempo
+      (por exemplo, registros fiscais de pagamento).
+    </p>
+  </section>
+
+  <section class="clause" id="direitos">
+    <div class="clause-head"><span class="clause-num">6.</span><h2 class="clause-title">Seus direitos</h2></div>
+    <p>Como titular dos dados, você pode a qualquer momento:</p>
+    <div class="rights-grid">
+      <div class="right-card"><span class="label">Confirmar e acessar</span><span class="desc">Saber quais dados seus temos e pedir uma cópia.</span></div>
+      <div class="right-card"><span class="label">Corrigir</span><span class="desc">Atualizar dados incompletos ou desatualizados.</span></div>
+      <div class="right-card"><span class="label">Excluir</span><span class="desc">Pedir a eliminação da sua conta e dos seus dados.</span></div>
+      <div class="right-card"><span class="label">Revogar consentimento</span><span class="desc">Retirar o consentimento dado para dados de saúde.</span></div>
+      <div class="right-card"><span class="label">Portabilidade</span><span class="desc">Receber seus dados em formato legível por máquina.</span></div>
+      <div class="right-card"><span class="label">Informação</span><span class="desc">Saber com quem seus dados são compartilhados.</span></div>
+    </div>
+    <div class="how-to">
+      <span class="eyebrow">Como exercer agora, direto no app</span>
+      No app, vá em <code>Perfil → Privacidade e dados</code>. Lá você encontra os botões
+      <strong>Exportar meus dados</strong> (recebe um arquivo por e-mail) e <strong>Excluir minha conta</strong>
+      (remoção permanente e imediata). Para qualquer outra solicitação, use o contato no final desta página.
+    </div>
+  </section>
+
+  <section class="clause" id="seguranca">
+    <div class="clause-head"><span class="clause-num">7.</span><h2 class="clause-title">Segurança</h2></div>
+    <ul style="margin-bottom:0;">
+      <li>Dados em trânsito são protegidos por criptografia TLS.</li>
+      <li>O banco de dados usa controle de acesso por linha (Row Level Security), restringindo cada usuário aos próprios dados.</li>
+      <li>Senhas nunca são armazenadas em texto puro.</li>
+      <li>O acesso de nossa equipe aos dados é restrito ao que é necessário para suporte e operação.</li>
+    </ul>
+  </section>
+
+  <section class="clause" id="criancas">
+    <div class="clause-head"><span class="clause-num">8.</span><h2 class="clause-title">Uso por menores de idade</h2></div>
+    <p style="margin-bottom:0;">
+      O HMfit não é direcionado a menores de 18 anos e envolve recursos financeiros (assinatura paga). Não coletamos
+      intencionalmente dados de crianças. Se você é responsável por um menor e acredita que ele usou o app, entre em
+      contato para que possamos excluir a conta.
+    </p>
+  </section>
+
+  <section class="clause" id="cookies">
+    <div class="clause-head"><span class="clause-num">9.</span><h2 class="clause-title">Cookies e armazenamento local</h2></div>
+    <p style="margin-bottom:0;">
+      O aplicativo mobile não usa cookies de rastreamento — apenas armazenamento local no dispositivo para manter você
+      autenticado. O painel administrativo (acesso restrito à equipe HMfit) usa um cookie de sessão estritamente
+      necessário para o login.
+    </p>
+  </section>
+
+  <section class="clause" id="alteracoes">
+    <div class="clause-head"><span class="clause-num">10.</span><h2 class="clause-title">Alterações nesta política</h2></div>
+    <p style="margin-bottom:0;">
+      Podemos atualizar esta política para refletir mudanças no app ou na lei. Alterações relevantes serão avisadas
+      no próprio app ou por e-mail antes de entrarem em vigor. A data no topo desta página sempre indica a versão vigente.
+    </p>
+  </section>
+
+  <section class="clause" id="contato">
+    <div class="clause-head"><span class="clause-num">11.</span><h2 class="clause-title">Contato</h2></div>
+    <p>Para dúvidas sobre esta política ou para exercer qualquer um dos seus direitos como titular de dados:</p>
+    <div class="contact-card">
+      <div>
+        <div class="ct-label">Fale com o HMfit</div>
+        <a class="ct-email" href="mailto:suporte@hmfit.app">suporte@hmfit.app</a>
+      </div>
+      <div class="ct-sub">Respondemos solicitações de titulares de dados em até 15 dias, conforme a LGPD.</div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; width:100%;">
+    <span>HMfit</span>
+    <span>Última atualização: 11 de outubro de 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
