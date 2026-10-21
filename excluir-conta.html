@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Exclusão de Conta HMfit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Layout: single focused page, same token system as a privacidade.html —
+     masthead, two delete paths side by side, then a data-fate table. */
+  :root {
+    --bg: #F6FAFE;
+    --surface: #FFFFFF;
+    --surface-sunken: #EEF5FC;
+    --text: #0A1F3D;
+    --text-dim: #4D6076;
+    --text-faint: #7C8DA0;
+    --border: #DCE7F2;
+    --navy: #001F54;
+    --blue: #0A6CF1;
+    --cyan: #0A86B3;
+    --red: #B3261E;
+    --red-soft: #FDECEA;
+    --cyan-soft: #E3F6FF;
+    --radius: 14px;
+    --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    --font-body: 'Manrope', -apple-system, 'Segoe UI', sans-serif;
+    color-scheme: light;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #001024;
+      --surface: #04234F;
+      --surface-sunken: #021636;
+      --text: #DFF6FF;
+      --text-dim: #9FC2DE;
+      --text-faint: #6E90AC;
+      --border: #123A73;
+      --navy: #DFF6FF;
+      --blue: #4FA0FF;
+      --cyan: #16C3FF;
+      --red: #FF8A80;
+      --red-soft: #2A0E0C;
+      --cyan-soft: #06283F;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #001024; --surface: #04234F; --surface-sunken: #021636;
+    --text: #DFF6FF; --text-dim: #9FC2DE; --text-faint: #6E90AC; --border: #123A73;
+    --navy: #DFF6FF; --blue: #4FA0FF; --cyan: #16C3FF;
+    --red: #FF8A80; --red-soft: #2A0E0C; --cyan-soft: #06283F;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.65; }
+  a { color: var(--blue); text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--blue) 40%, transparent); }
+  a:hover { text-decoration-color: var(--blue); }
+  a:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; border-radius: 4px; }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 700; text-wrap: balance; letter-spacing: 0.01em; }
+
+  .wrap { max-width: 760px; margin: 0 auto; padding-inline: 20px; }
+
+  header.masthead { padding-block: 40px 28px; border-bottom: 1px solid var(--border); }
+  .wordmark { display: inline-flex; gap: 2px; font-family: var(--font-display); font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 18px; }
+  .wordmark b { color: var(--navy); }
+  h1.title { font-size: clamp(26px, 6vw, 36px); line-height: 1.1; margin: 0 0 10px; color: var(--navy); }
+  .subtitle { color: var(--text-dim); font-size: 15px; margin: 0 0 18px; max-width: 48ch; }
+  .badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; padding: 6px 12px; border-radius: 999px; background: var(--surface-sunken); color: var(--text-dim); border: 1px solid var(--border); font-variant-numeric: tabular-nums; }
+
+  main { padding-block: 32px 56px; }
+  section.clause { padding-block: 26px; border-bottom: 1px solid var(--border); }
+  section.clause:last-of-type { border-bottom: none; }
+  .clause-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; }
+  .clause-num { font-family: var(--font-display); font-weight: 700; font-size: 15px; color: var(--blue); flex: none; min-width: 1.6em; }
+  h2.clause-title { font-size: 20px; margin: 0; color: var(--navy); }
+  section.clause p { color: var(--text-dim); font-size: 15.5px; margin: 0 0 14px; }
+
+  .path-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 4px; }
+  @media (max-width: 600px) { .path-grid { grid-template-columns: 1fr; } }
+  .path-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; }
+  .path-card .eyebrow { display: block; font-family: var(--font-display); font-weight: 700; font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--cyan); margin-bottom: 8px; }
+  .path-card h3 { font-size: 17px; margin: 0 0 10px; color: var(--navy); }
+  .path-card ol { margin: 0; padding-left: 20px; color: var(--text-dim); font-size: 14px; }
+  .path-card li { margin-bottom: 7px; }
+  .path-card li::marker { color: var(--blue); font-weight: 700; }
+  .path-card code { background: var(--surface-sunken); padding: 2px 6px; border-radius: 6px; font-weight: 600; font-size: 13px; }
+
+  .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); margin: 4px 0 0; }
+  table { width: 100%; border-collapse: collapse; min-width: 480px; font-size: 14px; }
+  thead th { text-align: left; font-family: var(--font-display); font-weight: 600; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-faint); background: var(--surface-sunken); padding: 10px 14px; border-bottom: 1px solid var(--border); }
+  tbody td { padding: 12px 14px; border-bottom: 1px solid var(--border); color: var(--text-dim); vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody td:first-child { color: var(--text); font-weight: 600; white-space: nowrap; }
+  .tag { display: inline-flex; font-size: 11.5px; font-weight: 700; letter-spacing: 0.02em; padding: 3px 9px; border-radius: 999px; }
+  .tag.del { background: var(--red-soft); color: var(--red); }
+  .tag.keep { background: var(--cyan-soft); color: var(--cyan); }
+
+  .contact-card { background: var(--navy); color: var(--bg); border-radius: 18px; padding: 24px; margin-top: 6px; display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between; align-items: center; }
+  .contact-card .ct-label { font-family: var(--font-display); font-weight: 600; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.7; margin-bottom: 4px; }
+  .contact-card .ct-email { font-size: 19px; font-weight: 700; color: #fff; text-decoration: none; }
+  .contact-card .ct-email:hover { text-decoration: underline; }
+  .contact-card .ct-sub { font-size: 13.5px; opacity: 0.75; max-width: 32ch; }
+
+  footer { border-top: 1px solid var(--border); padding-block: 22px 40px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 13px; color: var(--text-faint); }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="wordmark">HM<b>fit</b></div>
+    <h1 class="title">Exclusão de conta e dados</h1>
+    <p class="subtitle">Como solicitar, a qualquer momento, a exclusão permanente da sua conta HMfit e dos dados associados a ela.</p>
+    <span class="badge">Última atualização: 21 de outubro de 2026</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="clause">
+    <div class="clause-head"><span class="clause-num">1.</span><h2 class="clause-title">Como solicitar</h2></div>
+    <p>Existem duas formas de pedir a exclusão da sua conta HMfit — escolha a que funcionar pra você.</p>
+
+    <div class="path-grid">
+      <div class="path-card">
+        <span class="eyebrow">Caminho rápido</span>
+        <h3>Direto no app</h3>
+        <ol>
+          <li>Abra o HMfit e faça login na sua conta.</li>
+          <li>Vá em <code>Perfil → Privacidade e dados</code>.</li>
+          <li>Toque em <strong>Excluir minha conta</strong> e confirme duas vezes.</li>
+          <li>A exclusão é imediata e permanente.</li>
+        </ol>
+      </div>
+      <div class="path-card">
+        <span class="eyebrow">Sem acesso ao app</span>
+        <h3>Por e-mail</h3>
+        <ol>
+          <li>Envie um e-mail para <code>suporte@hmfit.app</code>, do mesmo endereço cadastrado na sua conta.</li>
+          <li>Use o assunto: <code>Exclusão de conta HMfit</code>.</li>
+          <li>Confirmamos a identidade e processamos a exclusão em até 15 dias.</li>
+          <li>Você recebe um e-mail quando a exclusão for concluída.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="clause">
+    <div class="clause-head"><span class="clause-num">2.</span><h2 class="clause-title">O que acontece com seus dados</h2></div>
+    <p>A exclusão remove permanentemente sua conta e todo o conteúdo pessoal. Registros financeiros têm retenção legal obrigatória, mas deixam de estar vinculados a você.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Dado</th><th>O que acontece</th></tr></thead>
+        <tbody>
+          <tr><td>Conta e perfil</td><td><span class="tag del">Excluído</span> nome, e-mail, senha e dados físicos (altura, peso, idade) — apagados imediatamente.</td></tr>
+          <tr><td>Saúde e limitações</td><td><span class="tag del">Excluído</span> lesões e contraindicações informadas na anamnese — apagadas imediatamente.</td></tr>
+          <tr><td>Treinos e progresso</td><td><span class="tag del">Excluído</span> planos de treino, histórico de séries/cargas e evolução — apagados imediatamente.</td></tr>
+          <tr><td>Notificações e dispositivo</td><td><span class="tag del">Excluído</span> preferências de notificação e token do dispositivo — apagados imediatamente.</td></tr>
+          <tr><td>Assinatura ativa</td><td><span class="tag del">Excluído</span> o vínculo da assinatura com sua conta é removido. Se a assinatura foi feita pela App Store/Google Play, cancele-a também nas configurações da loja — excluir a conta HMfit não cancela a cobrança automaticamente.</td></tr>
+          <tr><td>Registros de pagamento</td><td><span class="tag keep">Retido, anonimizado</span> mantemos o registro da transação (sem seu nome ou e-mail) pelo prazo exigido pela legislação fiscal brasileira, em geral até 5 anos.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="clause">
+    <div class="clause-head"><span class="clause-num">3.</span><h2 class="clause-title">Dúvidas</h2></div>
+    <p>Para qualquer pergunta sobre este processo, veja também a nossa <a href="./privacidade.html">Política de Privacidade</a> ou fale com a gente:</p>
+    <div class="contact-card">
+      <div>
+        <div class="ct-label">Fale com o HMfit</div>
+        <a class="ct-email" href="mailto:suporte@hmfit.app">suporte@hmfit.app</a>
+      </div>
+      <div class="ct-sub">Respondemos solicitações de exclusão em até 15 dias.</div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; width:100%;">
+    <span>HMfit</span>
+    <span>Última atualização: 21 de outubro de 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
